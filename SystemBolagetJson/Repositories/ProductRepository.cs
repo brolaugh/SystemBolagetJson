@@ -9,47 +9,29 @@ using SystemBolagetJson.Models;
 
 namespace SystemBolagetJson.Repositories
 {
-    public static class ProductRepository//: IRepository<artiklarArtikel>
+    public class ProductRepository: HttpSystembolagetRepository<artiklar, artiklarArtikel>
     {
-        private static DateTime? lastFetch;
-        private static List<artiklarArtikel> productList;
+        #region Singleton
 
-        public static async Task<ICollection<artiklarArtikel>> GetCollectionAsync()
+        private static readonly ProductRepository instance = new ProductRepository();
+
+        static ProductRepository()
+        {
+        }
+
+        public static ProductRepository Instance => instance;
+
+        #endregion
+
+
+        private const string _endpoint = "assortment/products/xml";
+
+        protected override string EndPoint => _endpoint;
+
+        public override async Task<ICollection<artiklarArtikel>> GetCollectionAsync()
         {
             await Update();
-            return productList;
-        }
-
-        private static async Task UpdateProductList()
-        {
-            var client = new HttpClient
-            {
-                BaseAddress = new Uri("https://www.systembolaget.se/api/")
-            };
-            var stream = await client.GetStreamAsync("assortment/products/xml");
-
-            var serializer = new XmlSerializer(typeof(artiklar));
-            var streamReader = new StreamReader(stream);
-            var articles = (artiklar)serializer.Deserialize(streamReader);
-            streamReader.Close();
-            productList = articles.artikel.ToList();
-            lastFetch = DateTime.UtcNow;
-        }
-
-        public static async Task Update()
-        {
-            if (!lastFetch.HasValue)
-            {
-                await UpdateProductList();
-                return;
-            }
-            var timeSinceLastFetch = lastFetch.Value - DateTime.UtcNow;
-            if (timeSinceLastFetch.TotalSeconds < 60 * 60)
-            {
-                return;
-            }
-
-            await UpdateProductList();
+            return endPointData.artikel.ToList();
         }
 
 

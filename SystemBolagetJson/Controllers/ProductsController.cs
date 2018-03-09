@@ -16,18 +16,21 @@ namespace SystemBolagetJson.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        public ProductsController()
+        private ProductRepository _repository;
+
+        public ProductsController(ProductRepository repository)
         {
+            this._repository = repository;
         }
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<artiklarArtikel>> Get() => await ProductRepository.GetCollectionAsync();
+        public async Task<IEnumerable<artiklarArtikel>> Get() => await _repository.GetCollectionAsync();
 
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var collection = await ProductRepository.GetCollectionAsync();
+            var collection = await _repository.GetCollectionAsync();
             var targetProduct = collection.SingleOrDefault(p => p.nr == id);
 
             if (targetProduct == null)
