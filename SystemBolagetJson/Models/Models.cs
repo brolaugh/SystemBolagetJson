@@ -1,25 +1,17 @@
 ﻿namespace SystemBolagetJson.Models
 {
-    // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class artiklar
+    public class artiklar
     {
         private artiklarArtikel[] artikelField;
 
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("artikel")]
         public artiklarArtikel[] artikel
         {
-            get => this.artikelField;
-            set => this.artikelField = value;
+            get => artikelField;
+            set => artikelField = value;
         }
     }
 
-    /// <remarks/>
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -81,201 +73,173 @@
 
         private string ravarorBeskrivningField;
 
-        /// <remarks/>
         public uint nr
         {
-            get => this.nrField;
-            set => this.nrField = value;
+            get => nrField;
+            set => nrField = value;
         }
 
-        /// <remarks/>
         public uint Artikelid
         {
-            get => this.artikelidField;
-            set => this.artikelidField = value;
+            get => artikelidField;
+            set => artikelidField = value;
         }
 
-        /// <remarks/>
         public uint Varnummer
         {
-            get => this.varnummerField;
-            set => this.varnummerField = value;
+            get => varnummerField;
+            set => varnummerField = value;
         }
 
-        /// <remarks/>
         public string Namn
         {
-            get => this.namnField;
-            set => this.namnField = value;
+            get => namnField;
+            set => namnField = value;
         }
 
-        /// <remarks/>
         public string Namn2
         {
-            get => this.namn2Field;
-            set => this.namn2Field = value;
+            get => namn2Field;
+            set => namn2Field = value;
         }
 
-        /// <remarks/>
         public decimal Prisinklmoms
         {
-            get => this.prisinklmomsField;
-            set => this.prisinklmomsField = value;
+            get => prisinklmomsField;
+            set => prisinklmomsField = value;
         }
 
-        /// <remarks/>
         public decimal Volymiml
         {
-            get => this.volymimlField;
-            set => this.volymimlField = value;
+            get => volymimlField;
+            set => volymimlField = value;
         }
 
-        /// <remarks/>
         public decimal PrisPerLiter
         {
-            get => this.prisPerLiterField;
-            set => this.prisPerLiterField = value;
+            get => prisPerLiterField;
+            set => prisPerLiterField = value;
         }
 
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
         public System.DateTime Saljstart
         {
-            get => this.saljstartField;
-            set => this.saljstartField = value;
+            get => saljstartField;
+            set => saljstartField = value;
         }
 
-        /// <remarks/>
         public bool Utgått
         {
-            get => this.utgåttField;
-            set => this.utgåttField = value;
+            get => utgåttField;
+            set => utgåttField = value;
         }
 
-        /// <remarks/>
         public string Varugrupp
         {
-            get => this.varugruppField;
-            set => this.varugruppField = value;
+            get => varugruppField;
+            set => varugruppField = value;
         }
 
-        /// <remarks/>
         public string Typ
         {
-            get => this.typField;
-            set => this.typField = value;
+            get => typField;
+            set => typField = value;
         }
 
-        /// <remarks/>
         public string Stil
         {
-            get => this.stilField;
-            set => this.stilField = value;
+            get => stilField;
+            set => stilField = value;
         }
 
-        /// <remarks/>
         public string Forpackning
         {
-            get => this.forpackningField;
-            set => this.forpackningField = value;
+            get => forpackningField;
+            set => forpackningField = value;
         }
 
-        /// <remarks/>
         public string Forslutning
         {
-            get => this.forslutningField;
-            set => this.forslutningField = value;
+            get => forslutningField;
+            set => forslutningField = value;
         }
 
-        /// <remarks/>
         public string Ursprung
         {
-            get => this.ursprungField;
-            set => this.ursprungField = value;
+            get => ursprungField;
+            set => ursprungField = value;
         }
 
-        /// <remarks/>
         public string Ursprunglandnamn
         {
-            get => this.ursprunglandnamnField;
-            set => this.ursprunglandnamnField = value;
+            get => ursprunglandnamnField;
+            set => ursprunglandnamnField = value;
         }
 
-        /// <remarks/>
         public string Producent
         {
-            get => this.producentField;
-            set => this.producentField = value;
+            get => producentField;
+            set => producentField = value;
         }
 
-        /// <remarks/>
         public string Leverantor
         {
-            get => this.leverantorField;
-            set => this.leverantorField = value;
+            get => leverantorField;
+            set => leverantorField = value;
         }
 
-        /// <remarks/>
         public string Argang
         {
-            get => this.argangField;
-            set => this.argangField = value;
+            get => argangField;
+            set => argangField = value;
         }
 
-        /// <remarks/>
         public string Provadargang
         {
-            get => this.provadargangField;
-            set => this.provadargangField = value;
+            get => provadargangField;
+            set => provadargangField = value;
         }
 
-        /// <remarks/>
         public string Alkoholhalt
         {
-            get => this.alkoholhaltField;
-            set => this.alkoholhaltField = value;
+            get => alkoholhaltField;
+            set => alkoholhaltField = value;
         }
 
-        /// <remarks/>
         public string Sortiment
         {
-            get => this.sortimentField;
-            set => this.sortimentField = value;
+            get => sortimentField;
+            set => sortimentField = value;
         }
 
-        /// <remarks/>
         public string SortimentText
         {
-            get => this.sortimentTextField;
-            set => this.sortimentTextField = value;
+            get => sortimentTextField;
+            set => sortimentTextField = value;
         }
 
-        /// <remarks/>
         public bool Ekologisk
         {
-            get => this.ekologiskField;
-            set => this.ekologiskField = value;
+            get => ekologiskField;
+            set => ekologiskField = value;
         }
 
-        /// <remarks/>
         public bool Etiskt
         {
-            get => this.etisktField;
-            set => this.etisktField = value;
+            get => etisktField;
+            set => etisktField = value;
         }
 
-        /// <remarks/>
         public bool Koscher
         {
-            get => this.koscherField;
-            set => this.koscherField = value;
+            get => koscherField;
+            set => koscherField = value;
         }
 
-        /// <remarks/>
         public string RavarorBeskrivning
         {
-            get => this.ravarorBeskrivningField;
-            set => this.ravarorBeskrivningField = value;
+            get => ravarorBeskrivningField;
+            set => ravarorBeskrivningField = value;
         }
     }
 }
