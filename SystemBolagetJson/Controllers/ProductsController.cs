@@ -16,7 +16,7 @@ namespace SystemBolagetJson.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        private ProductRepository _repository;
+        private readonly ProductRepository _repository;
 
         public ProductsController(ProductRepository repository)
         {
