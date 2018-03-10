@@ -40,6 +40,7 @@ namespace SystemBolagetJson
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
