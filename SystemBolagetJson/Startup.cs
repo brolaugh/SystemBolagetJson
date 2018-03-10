@@ -25,6 +25,10 @@ namespace SystemBolagetJson
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton((context) => ProductRepository.Instance);
+            services.AddResponseCaching(opt =>
+            {
+                opt.UseCaseSensitivePaths = false;
+            });
             services.AddMvc();
         }
 

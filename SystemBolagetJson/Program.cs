@@ -12,6 +12,8 @@ namespace SystemBolagetJson
 {
     public class Program
     {
+        public const int CacheDuration = 60 * 60;
+
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
