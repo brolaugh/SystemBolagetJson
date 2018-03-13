@@ -24,7 +24,15 @@ namespace SystemBolagetJson.Controllers
         }
         // GET api/values
         [HttpGet]
-        public async Task<IEnumerable<artiklarArtikel>> Get() => await _repository.GetCollectionAsync();
+        public async Task<IEnumerable<artiklarArtikel>> Get([FromQuery]int page = 1, [FromQuery]int pageSize = 0){
+            var collection = await _repository.GetCollectionAsync();
+            if(pageSize > 0){
+                return collection
+                    .Skip((page * pageSize) - pageSize)
+                    .Take(pageSize);
+            }
+            return collection;
+        } 
 
         // GET api/values/5
         [HttpGet("{id}")]
